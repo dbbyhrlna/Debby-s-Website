@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debby Herlena | Personal Website</title>
+
+    <style>
+        {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f3ef;
+            color: #344454;
+            line-height: 1.7;
+        }
+
+        header {
+            background: linear-gradient(135deg, #526b82, #8298aa);
+            color: white;
+            text-align: center;
+            padding: 55px 20px 45px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            letter-spacing: 2px;
+            margin: 10px 0;
+        }
+
+        header p {
+            margin: 5px;
+            color: #f2eee8;
+        }
+
+        nav {
+            background-color: #344b60;
+            padding: 13px 8px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #e5d8c8;
+            text-decoration: underline;
+        }
+
+        .controls {
+            text-align: center;
+            padding: 12px;
+            background: #e6e9e9;
+        }
+
+        button {
+            background: #526b82;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 9px 16px;
+            margin: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #344b60;
+        }
+
+        main {
+            width: 90%;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(45, 63, 80, 0.08);
+            scroll-margin-top: 75px;
+        }
+
+        h2 {
+            color: #526b82;
+            font-family: Georgia, serif;
+            border-bottom: 2px solid #d8cfc4;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #526b82;
+        }
+
+        .intro-layout, .two-column, .media-layout {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .intro-layout img {
+            width: 280px;
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        .biodata-landscape {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 12px;
+            margin: 18px 0 22px;
+        }
+
+        .intro-text {
+            flex: 1;
+            min-width: 230px;
+        }
+
+        .info-card {
+            background: #f1f3f3;
+            border-left: 4px solid #8298aa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 12px 0;
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .experience-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 18px 0 25px;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 170px;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .experience-item .info-card {
+            margin: 0;
+        }
+
+        .experience-photo {
+            width: 170px;
+            height: 190px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .education-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(220px, 1fr);
+            gap: 20px;
+            align-items: center;
+            margin: 18px 0 25px;
+        }
+
+        .education-image {
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .education-image img {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .food-card {
+            background: #f7f2eb;
+            border-radius: 12px;
+            padding: 18px;
+            flex: 1;
+            min-width: 210px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 15px;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.35s;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .grandpa {
+            background: #edf1f3;
+            padding: 22px;
+            border-radius: 12px;
+            border: 1px solid #d5dfe4;
+        }
+
+        .grandpa img {
+            width: 220px;
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #d3dce1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #526b82;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background: #f1f3f3;
+        }
+
+        ul.custom-list {
+            list-style: none;
+            padding-left: 5px;
+        }
+
+        ul.custom-list li::before {
+            content: "✦ ";
+            color: #8298aa;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 6px;
+            color: #344b60;
+            text-decoration: none;
+            background: #e8edef;
+            padding: 8px 13px;
+            border-radius: 20px;
+        }
+
+        .social-links a:hover {
+            background: #d5dfe4;
+        }
+
+        .social-thumb {
+            width: 90px;
+            height: 65px;
+            object-fit: cover;
+            border-radius: 8px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+
+        audio, video {
+            width: 100%;
+            max-width: 480px;
+            margin-top: 10px;
+        }
+
+        /* Centre the family video */
+        #family video {
+            display: block;
+            margin: 15px auto;
+            border-radius: 12px;
+        }
+
+        .clock {
+            font-weight: bold;
+            color: #344b60;
+        }
+
+        .small-note {
+            font-size: 13px;
+            color: #687987;
+        }
+
+        footer {
+            background: #344b60;
+            color: white;
+            text-align: center;
+            padding: 25px 12px;
+            margin-top: 35px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .highlight {
+            color: #526b82;
+            font-weight: bold;
+        }
+
+        @media (max-width: 700px) {
+            .experience-item {
+                grid-template-columns: minmax(0, 1fr) 125px;
+                gap: 12px;
+            }
+
+            .experience-photo {
+                width: 125px;
+                height: 155px;
+            }
+
+            .education-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .education-image img {
+                height: 230px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .experience-item {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-photo {
+                width: 100%;
+                height: 210px;
+            }
+        }
+
+        @media (max-width: 650px) {
+            header h1 { font-size: 32px; }
+            nav a { margin: 5px 6px; font-size: 13px; }
+            section { padding: 20px; }
+            main { width: 94%; }
+            table { font-size: 13px; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="top">
+        <p>A LITTLE SPACE ABOUT HER</p>
+        <h1>Debby Herlena</h1>
+        <p>Personal Website | Memories • Experiences • Everyday Moments</p>
+        <p class="small-note">A personal website created by Marsya Maisarah</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#biodata">Biodata</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#family">Family</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="controls">
+        <span class="clock" id="clock"></span>
+    </div>
+
+    <main>
+        <section id="home" class="fade-in">
+            <h2>Home</h2>
+            <div class="intro-layout">
+                <img src="profile.jpg" alt="A portrait of Debby">
+                <div class="intro-text">
+                    <h3>Welcome to Her Little Corner</h3>
+                    <p>This website shares a glimpse of Debby's life, from her background and education to the people, experiences and little things that make her who she is.</p>
+                    <p>It is a collection of memories, meaningful moments and personal interests, arranged in one simple space.</p>
+                    <p><b>Take a look around</b> and explore each part of her story.</p>
+                    <p><a href="#biodata">Discover more about her →</a></p>
+                </div>
+            </div>
+
+            <h3>Quick Navigation Image Map</h3>
+            <img src="profile.jpg" alt="Image map navigation to different website sections"
+                 usemap="#quickmap" width="600" height="400" style="max-width:100%; height:auto; border-radius:10px;">
+            <map name="quickmap">
+                <area shape="rect" coords="0,0,200,400" href="#biodata" alt="Biodata">
+                <area shape="rect" coords="201,0,400,400" href="#family" alt="Family">
+                <area shape="rect" coords="401,0,600,400" href="#gallery" alt="Gallery">
+            </map>
+        </section>
+
+        <section id="biodata" class="fade-in">
+            <h2>Biodata</h2>
+            <img src="biodata-landscape.jpg" alt="Landscape photograph for the biodata section"
+                 class="biodata-landscape">
+            <p>Here are a few details about Debby and the interests that make her personality special.</p>
+            <table>
+                <tr><th>Details</th><th>Information</th></tr>
+		<tr><td>Full Name</td><td>Debby Herlena Venson</td></tr>
+		<tr><td>Nationality</td><td>Malaysian</td></tr>
+		<tr><td>Hometown</td><td>Penampang, Sabah</td></tr>
+		<tr><td>Ethnicity</td><td>Kadazandusun</td></tr>
+		<tr><td>Interests</td><td>Playing netball, trying new recipes and exploring new places</td></tr>
+            </table>
+
+		<h3>A Little Uniqueness: Food & Her Kitchen Moments</h3>
+		<div class="two-column">
+   		 <div class="food-card">
+        	<h3>Her Love for Cooking: Kari Ikan</h3>
+        	<p>She enjoys spending time in the kitchen, especially cooking Kari Ikan, one of her favourite dishes to prepare. Cooking allows her to relax, explore new recipes and 			express her creativity through food.</p>
+        	<img src="food1.jpg" alt="Homemade Kari Ikan" style="width:100%; border-radius:10px;">
+    		</div>
+
+    		<div class="food-card">
+        <h3>Current Favourite: Laksa Penang</h3>
+        <p>Her current favourite food is Laksa Penang! She also has quite unique food preferences and is not really a fan of popular choices such as ayam gepuk, penyet, geprek, tiramisu, chocolate, corndogs, takoyaki, sausages, burgers and bomboloni. She definitely has her own taste!</p>
+        <img src="food2.jpg" alt="Laksa Penang" style="width:100%; border-radius:10px;">
+    </div>
+</div>
+           <p><b>Did You Know?</b> She enjoys spending her free time cooking and baking, especially when she wants to relax and express her creativity.</p>
+
+		<p><abbr title="For Your Information">FYI</abbr>, preparing homemade food is one of the little things she enjoys doing during her free time.</p>
+
+		<p>For her, cooking is not just about following a <b>recipe</b><sup>♡</sup>, but also about trying new ideas and learning something different.</p>
+
+		<p>She believes that good food does not have to be <del>expensive or complicated</del>, as even a simple homemade meal can bring happiness.</p>
+
+<pre>
+       A pinch of creativity,
+       A spoonful of patience,
+       A little passion,
+       And lots of love.
+
+       That's her recipe for happiness!
+</pre>
+
+        </section>
+
+        <section id="experience" class="fade-in">
+            <h2>Experience</h2>
+
+            <div class="experience-layout">
+                <div class="experience-item">
+                    <div class="info-card">
+                  <h3>Practical Training at Jawat Johan Sdn. Bhd.</h3>
+<p>
+    During her internship at Jawat Johan Sdn. Bhd., she gained valuable experience in filing, organising and maintaining company records. Although the company focuses on construction, she also learned to handle various administrative documents and understand the company's operations. One of her memorable experiences was joining her aunt, the Head of the Facility Department, during audit visits to health clinics in Keningau, Apin-Apin, Bingkor and Kundasang. She had the opportunity to observe clinic facility inspections and documentation checks carried out together with representatives from Jabatan Kesihatan Negeri Sabah (JKNS). This experience helped her understand workplace responsibilities beyond office tasks.
+</p>
+</div>
+                    <img class="experience-photo" src="experience1.jpg" alt="Student leadership and outreach experience">
+                </div>
+
+                <div class="experience-item">
+                    <div class="info-card">
+                        <h3>Field Visit with TONIBUNG – Micro-Hydro Project</h3>
+<p>
+    She also had the opportunity to accompany her aunt, Vera Seminding, a mechanical engineer, to observe a micro-hydro project organised by TONIBUNG, a community-led organisation based in Penampang, Sabah. The visit involved exploring seven rural villages in the Ulu Papar area. Starting from Batu 32, Gunung Emas, along the Penampang-Tambunan road, she experienced an approximately 10-hour hike through the forest just to reach the first village, Kampung Longkogungan. During the visit, she learned how micro-hydro systems use flowing water to generate electricity for remote communities. This experience gave her a deeper appreciation of rural life, renewable energy and the challenges faced by communities in accessing electricity.
+</p>
+                    </div>
+                    <img class="experience-photo" src="experience2.jpg" alt="Practical training experience">
+                </div>
+            </div>
+
+            <h3>Skills she continues to develop</h3>
+            <ol>
+                <li>Communication and teamwork</li>
+                <li>Time management and organisation</li>
+                <li>Creativity and problem-solving</li>
+            </ol>
+
+            <ul class="custom-list">
+                <li>Willingness to learn</li>
+                <li>Responsible attitude</li>
+                <li>Enjoys helping and working with others</li>
+            </ul>
+        </section>
+
+        <section id="education" class="fade-in">
+            <h2>Education</h2>
+            <p>Her education journey reflects her growth, learning and the experiences that have shaped her.</p>
+
+            <div class="education-layout">
+                <div>
+                    <table>
+                        <tr><th>Level</th><th>Institution</th><th>Focus</th></tr>
+                        <tr><td>Secondary School</td><td>SMK Datuk Peter Mojuntin, Sabah (Sabah Sports School)</td><td>School education and co-curricular activities</td></tr>
+                        <tr><td>Diploma</td><td>Universiti Teknologi MARA (UiTM), Sarawak</td><td>Diploma in Information Management</td></tr>
+                    </table>
+                </div>
+
+                <div class="education-image">
+                    <img src="education.jpg" alt="A photograph representing her education journey">
+                </div>
+            </div>
+        </section>
+
+        <section id="family" class="fade-in">
+            <h2>Family</h2>
+            <p>Family is an important part of her life. The memories shared with loved ones are a reminder of where she comes from and the people who have supported her along the way.</p>
+            <div class="photo-grid">
+                <img src="family1.jpg" alt="Family photograph one">
+                <img src="family2.jpg" alt="Family photograph two">
+                <img src="family3.jpg" alt="Family photograph three">
+            </div>
+
+            
+		<div class="grandpa" style="margin-top:25px;">
+    		<h3>A Special Place in Her Heart: Her Grandpa</h3>
+    		<div class="media-layout">
+        	<img src="grandpa.jpg" alt="A photograph of her grandfather">
+
+        	<div style="flex:1; min-width:220px;">
+            	<p>Her late grandfather, Kakee, holds a very special place in her heart. During her Semester 2 break, she returned to Sabah and was fortunate to spend some time with him. 		She had the opportunity to take care of him at home for a day, followed by almost three weeks of visiting and staying with him in the hospital.</p>
+
+            	<p>Those weeks were unforgettable for her. She remembered how he slowly became weaker, from recognising her as his 			granddaughter to the heartbreaking moment when he could 		no longer remember who she was.</p>
+
+            	<p>One of his wishes was to see her achieve the Dean's List. Sadly, he passed away before she had the chance to share that 		achievement with him. Not long after his passing, 		she received the news that she had made the Dean's List. 		It was a proud moment, but also a bittersweet one because she never got to tell him or see his reaction.</p>
+
+            	<p>Until today, she carries his wish as a motivation to keep doing her best. She hopes that wherever he is, he knows that she finally achieved what he once wished to 			see.</p>
+
+            	<p><i>Some wishes come true, but the people we wish to share them with are no longer here.</i></p>
+        	</div>
+    		</div>
+		</div>
+
+            <h3>Family Song</h3>
+            <p>When this section comes into view, the family song can start after the visitor has enabled audio. It will stop when the 		visitor scrolls away from this section.</p>
+            <button onclick="enableFamilyMusic()">Enable Family Music</button>
+            <audio id="familySong" controls loop>
+                <source src="family-song.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+            </audio>
+            <p class="small-note" id="musicStatus">Audio needs one tap first because most browsers block automatic sound until the visitor interacts with the page.</p>
+
+            <h3>Family Video</h3>
+            <video controls poster="family-video-cover.jpg">
+                <source src="family-video.mp4" type="video/mp4">
+                Your browser does not support video.
+            </video>
+        </section>
+
+        <section id="gallery" class="fade-in">
+            <h2>Gallery</h2>
+            <p>A few snapshots of moments, places and people worth remembering.</p>
+            <div class="photo-grid">
+                <img src="gallery1.jpg" alt="Gallery photograph one">
+                <img src="gallery2.jpg" alt="Gallery photograph two">
+                <img src="gallery3.jpg" alt="Gallery photograph three">
+                <img src="gallery4.jpg" alt="Gallery photograph four">
+                <img src="gallery5.jpg" alt="Gallery photograph five">
+                <img src="gallery6.jpg" alt="Gallery photograph six">
+            </div>
+        </section>
+
+        <section id="contact" class="fade-in">
+            <h2>Social Media & Contact</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="instagram.jpg" alt="Instagram thumbnail" class="social-thumb"> Instagram
+                </a>
+                <a href="https://www.tiktok.com/" target="_blank">
+                    <img src="tiktok.jpg" alt="TikTok thumbnail" class="social-thumb"> TikTok
+                </a>
+                <a href="mailto:dbbyhrlna@gmail.com">Email</a>
+            </div>
+            <p><b>Email:</b> <a href="mailto:dbbyhrlna@gmail.com">dbbyhrlna@gmail.com</a></p>
+            <p><b>Back to top:</b> <a href="#top">Return to the beginning of the page</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Debby Herlena Venson | Personal Website</p>
+        <p>Created for academic purposes.</p>
+        <p>All photographs, music and videos belong to their respective owners.</p>
+    </footer>
+
+    <script>
+        // Live digital clock
+        function showClock() {
+            var now = new Date();
+            document.getElementById("clock").innerHTML =
+                "Local Time: " + now.toLocaleTimeString();
+        }
+        showClock();
+        setInterval(showClock, 1000);
+
+        // Reveal sections gently while scrolling
+        var revealItems = document.querySelectorAll(".fade-in");
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealItems.forEach(function(item) {
+            revealObserver.observe(item);
+        });
+
+        // Family song: visitor enables it once, then it plays only in Family section
+        var familySection = document.getElementById("family");
+        var familySong = document.getElementById("familySong");
+        var musicEnabled = false;
+
+        function enableFamilyMusic() {
+            musicEnabled = true;
+            document.getElementById("musicStatus").innerHTML =
+                "Family music is enabled. It will play when the Family section is on screen.";
+            if (familySection.getBoundingClientRect().top < window.innerHeight &&
+                familySection.getBoundingClientRect().bottom > 0) {
+                familySong.play().catch(function() {
+                    document.getElementById("musicStatus").innerHTML =
+                        "Press the play button on the audio player to start the song.";
+                });
+            }
+        }
+
+        var familyObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting && musicEnabled) {
+                    familySong.play().catch(function() {
+                        document.getElementById("musicStatus").innerHTML =
+                            "Press play once on the audio player if the browser blocks automatic playback.";
+                    });
+                } else {
+                    familySong.pause();
+                    familySong.currentTime = 0;
+                }
+            });
+        }, { threshold: 0.35 });
+
+        familyObserver.observe(familySection);
+
+        // Friendly welcome notification
+        window.addEventListener("load", function() {
+            setTimeout(function() {
+                alert("Welcome! Explore Debby's personal website.");
+            }, 700);
+        });
+    </script>
+</body>
+</html>
